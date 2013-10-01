@@ -1,0 +1,33 @@
+<!doctype html>
+<html data-ng-app="KoganApp" data-ng-csp>
+    <head>
+        <title>Kogan Notifications</title>
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
+        <script src="/js/angular.min.js"></script>
+        <script src="/js/main.js"></script>
+    </head>
+    <body data-ng-controller="NotificationsController">
+
+    <div id="notification-wrapper">
+        <ul id="notification-list">
+            <li data-ng-repeat="notification in notifications">
+            <section class="notification-box" onclick="window.open({{ notification.data.url }},'_blank');">
+                <div class="image">
+                    <a href="http://www.kogan.com{{ notification.data.url }}" target="_blank"><img src="{{ notification.data.image_url }}" alt="{{ notification.data.title }}"/></a>
+                </div>
+                <div class="message">
+                     <a href="http://www.kogan.com{{ notification.data.url }}" target="_blank">{{ notification.data.title }}</a>
+                     <p class="content">
+                        <img src="{{ notification.icon }}" alt="{{ notification.data.title }}"/>
+                        <span>{{ notification.message }}</span>
+                    </p>
+                     <p class="time">{{ notification.time }}</p>
+                </div>
+            </section>
+            </li>
+        </ul>
+    </div>
+
+    </body>
+</html>
+
