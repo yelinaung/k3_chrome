@@ -10,7 +10,7 @@
         "https://www.googleapis.com/",
         "pushMessaging",
         "notifications",
-        "background",
+        "background"
     ],
     "background": {
         "scripts": ["js/background.js"]
